@@ -69,21 +69,42 @@ let arrayText = document.getElementById('text');
 let arrayIndex = document.getElementById('element');
 
 document.getElementById('button_before').addEventListener('click', function () {
-    array.splice(Number(arrayIndex.value), 0, arrayText.value);
-    let arrayString = '';
-    array.forEach(function (value, index) {
-        arrayString += `${value}[${index}] `
-    });
-    section.innerHTML = arrayString;
+    if (arrayIndex.value >= array.length)
+    {
+        alert('Brat (ili sestra), netu stolko indeksov v massive')
+    }
+    else if (arrayText.value.length <= 3)
+    {
+        alert('Слишком короткое название для елемента')
+    }
+    else
+    {
+        array.splice(Number(arrayIndex.value), 0, arrayText.value);
+        let arrayString = '';
+        array.forEach(function (value, index) {
+            arrayString += `${value}[${index}] `
+        });
+        section.innerHTML = arrayString;
+    }
 });
 
 document.getElementById('button_after').addEventListener('click', function () {
-    array.splice(Number(arrayIndex.value) + 1, 0, arrayText.value);
-    let arrayString = '';
-    array.forEach(function (value, index) {
-        arrayString += `${value}[${index}] `
-    });
-    section.innerHTML = arrayString;
+    if (arrayIndex.value >= array.length)
+    {
+        alert('Brat (ili sestra), netu stolko indeksov v massive')
+    }
+    else if (arrayText.value.length <= 3)
+    {
+        alert('Слишком короткое название для елемента')
+    }
+    else {
+        array.splice(Number(arrayIndex.value) + 1, 0, arrayText.value);
+        let arrayString = '';
+        array.forEach(function (value, index) {
+            arrayString += `${value}[${index}] `
+        });
+        section.innerHTML = arrayString;
+    }
 });
 
 
