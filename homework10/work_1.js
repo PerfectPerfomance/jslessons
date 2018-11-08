@@ -15,7 +15,9 @@ label.htmlFor = 'selectImages';
 label.innerText = 'Select images';
 
 let promise = function ( imageFile ) {
-    return onerror;
+    // TODO Доделать ДЗ 10
+    if ()
+    console.log(imageFile.type)
 };
 
 selector.onchange = function ( event ) {
